@@ -10,7 +10,9 @@
 		"prestart": "babel-node buildScripts/mensagemInicial.js",
 		"security-check": "nsp check",
 		"share": "npm-run-all --parallel open:src localtunnel",
-		"start": "npm-run-all --parallel security-check open:src lint:watch"
+		"start": "npm-run-all --parallel security-check open:src lint:watch test:watch",
+		"test": "mocha --reporter progress buildScripts/testSetup.js \"src/**/*.test.js\"",
+		"test:watch": "npm run test -- --watch"
 	},
 	"author": "Ricardo Correia",
 	"license": "MIT",
