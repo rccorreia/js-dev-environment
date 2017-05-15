@@ -3,7 +3,6 @@ import express from "express";
 import open from "open";
 import path from "path";
 import webpack from "webpack";
-
 const port = 3000;
 const app = express();
 const compiler = webpack(config);
@@ -24,3 +23,4 @@ app.listen(port, function(err){
 		open("http://localhost:" + port);
 	}
 });
+

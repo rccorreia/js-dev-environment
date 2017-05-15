@@ -3,13 +3,15 @@
 	"version": "1.0.0",
 	"description": "JavaScript Development Environment",
 	"scripts": {
-	"localtunnel": "lt --port 3000",
-	"open:src": "babel-node buildScripts/srcServer.js",
-	"prestart": "babel-node buildScripts/mensagemInicial.js",
-	"security-check": "nsp check",
-	"share": "npm-run-all --parallel open:src localtunnel",
-	"start": "npm-run-all --parallel security-check open:src"
-},
+		"lint": "esw webpack.config.* src buildScripts --color",
+		"lint:watch": "npm run lint -- --watch",
+		"localtunnel": "lt --port 3000",
+		"open:src": "babel-node buildScripts/srcServer.js",
+		"prestart": "babel-node buildScripts/mensagemInicial.js",
+		"security-check": "nsp check",
+		"share": "npm-run-all --parallel open:src localtunnel",
+		"start": "npm-run-all --parallel security-check open:src lint:watch"
+	},
 	"author": "Ricardo Correia",
 	"license": "MIT",
 	"dependencies": {
