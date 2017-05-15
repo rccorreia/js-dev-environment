@@ -1,7 +1,7 @@
 import path from 'path';
 
 export default {
-  debug: true,
+	debug: true,
   devtool: 'inline-source-map',
   noInfo: false,
   entry: [
